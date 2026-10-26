@@ -1,0 +1,94 @@
+---
+import { nav } from "../data/site";
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) => path === href || path.startsWith(href + "/");
+---
+<header class="sticky top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-paper/70">
+  <a
+    href="#main"
+    class="sr-only rounded-md bg-ink px-3 py-2 text-sm text-paper focus:not-sr-only focus:absolute focus:left-4 focus:top-3"
+    >Skip to content</a
+  >
+  <div class="container-page flex h-16 items-center justify-between gap-6">
+    <a href="/" class="rounded-lg" aria-label="Avarch home"><Logo /></a>
+
+    <nav aria-label="Primary" class="hidden md:block">
+      <ul class="flex items-center gap-1">
+        {nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              class="rounded-full px-3.5 py-2 text-sm text-ink-2 transition-colors hover:bg-paper-2 hover:text-ink aria-[current=page]:bg-ink aria-[current=page]:text-paper"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <a
+      href="/contact"
+      class="hidden items-center gap-1.5 rounded-full bg-iris-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-iris-700 md:inline-flex"
+    >
+      Work with us <Icon name="arrow-right" size={16} />
+    </a>
+
+    <button
+      type="button"
+      class="-mr-2 grid size-11 place-items-center rounded-full text-ink hover:bg-paper-2 md:hidden"
+      aria-controls="mobile-nav"
+      aria-expanded="false"
+      data-menu-toggle
+    >
+      <span class="sr-only">Open menu</span>
+      <Icon name="menu" size={22} class="menu-open" />
+      <Icon name="close" size={22} class="menu-close hidden" />
+    </button>
+  </div>
+
+  <nav id="mobile-nav" aria-label="Mobile" class="hidden border-t border-line bg-paper md:hidden" data-menu>
+    <ul class="container-page flex flex-col py-3">
+      {nav.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class="flex items-center justify-between border-b border-line/70 py-3.5 font-serif text-2xl aria-[current=page]:text-iris-600"
+          >
+            {item.label}
+            <Icon name="arrow-right" size={18} class="text-muted" />
+          </a>
+        </li>
+      ))}
+      <li class="pt-4">
+        <a href="/contact" class="flex justify-center rounded-full bg-iris-600 py-3 font-medium text-white">Work with us</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-menu]");
+  if (toggle && menu) {
+    const set = (open: boolean) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.querySelector(".sr-only")!.textContent = open ? "Close menu" : "Open menu";
+      toggle.querySelector(".menu-open")?.classList.toggle("hidden", open);
+      toggle.querySelector(".menu-close")?.classList.toggle("hidden", !open);
+      menu.classList.toggle("hidden", !open);
+    };
+    toggle.addEventListener("click", () => set(toggle.getAttribute("aria-expanded") !== "true"));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        set(false);
+        toggle.focus();
+      }
+    });
+  }
+</script>

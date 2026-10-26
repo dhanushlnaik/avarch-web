@@ -1,0 +1,210 @@
+export const founder = {
+  name: "Pooja Ranjan",
+  role: "Founder, Avarch · Herder-in-Chief, Ethereum Cat Herders",
+  portrait: "/img/about_pooja_ranjan.png",
+  cutout: "/img/pooja-transparent.png",
+  quote:
+    "Blockchain is a very deep subject. Keep building and maintain consistency in learning the process. Everyone can make a difference.",
+  twitter: "https://twitter.com/poojaranjan19",
+  github: "https://github.com/poojaranjan",
+};
+
+export const journey = [
+  {
+    year: "2016",
+    title: "Discovers Ethereum",
+    body: "Joins the blockchain community by learning about the Ethereum blockchain from the ground up.",
+  },
+  {
+    year: "2017",
+    title: "Founds Avarch & EtherWorld",
+    body: "Starts Avarch LLC with EtherWorld as its first project — publishing news, technical content and project updates to grow awareness of blockchain technology.",
+  },
+  {
+    year: "2020",
+    title: "Launches BlockAction",
+    body: "Co-founds BlockAction, an explorer that supported the Beacon Chain multi-client testnet ahead of Ethereum's move to proof-of-stake.",
+  },
+  {
+    year: "2022",
+    title: "Launches EIPsInsight",
+    body: "Builds a data analytics dashboard and monthly reports for Ethereum Improvement Proposals.",
+  },
+  {
+    year: "Today",
+    title: "Coordinating, documenting, teaching",
+    body: "Leads Ethereum Cat Herders, hosts PEEPanEIP and continues to grow Avarch's tools and education programmes.",
+  },
+];
+
+export const contributions = [
+  {
+    kicker: "Standards",
+    title: "EIPs",
+    body: "Active contributor to the Ethereum Improvement Proposal process and co-author of EIP-5069, which documents the EIP editor handbook.",
+    href: "https://eips.ethereum.org/",
+    cta: "Explore EIPs",
+    image: "/img/icons/ethereum_logo_3d.jpg",
+  },
+  {
+    kicker: "Data",
+    title: "EIPsInsight",
+    body: "Launched EIPsInsight, the analytics dashboard that tracks every proposal's status and history.",
+    href: "https://eipsinsight.com/",
+    cta: "View dashboard",
+    image: "/img/icons/eipsinsight_icon.png",
+  },
+  {
+    kicker: "Community",
+    title: "Ethereum Cat Herders",
+    body: "Herder-in-Chief of the decentralised project-management group that coordinates Ethereum network upgrades.",
+    href: "https://www.ethereumcatherders.com/",
+    cta: "Visit community",
+    image: "/img/icons/cat_herders.png",
+  },
+  {
+    kicker: "Education",
+    title: "PEEPanEIP",
+    body: "Host of the long-running video series where EIP authors walk through their proposals in plain language.",
+    href: "https://www.youtube.com/playlist?list=PL4cwHXAawZxqu0PKKyMzG_3BJV_xZTi1F",
+    cta: "Watch series",
+    image: "/img/icons/eips.gif",
+  },
+];
+
+const yt = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+
+export const talks = [
+  { year: "2025", title: "EIP Summit · Devconnect Argentina", href: "https://www.youtube.com/watch?v=wH76j1BDZkc", image: "/img/icons/eip_summit_cover.png" },
+  { year: "2025", title: "EDCON Osaka", href: "https://www.youtube.com/watch?v=uVj7JyTbLbg", image: "/img/icons/edcon_osaka_cover.png" },
+  { year: "2024", title: "Devcon SEA", href: "https://www.youtube.com/watch?v=xycI1vbxJo8", image: yt("xycI1vbxJo8") },
+  { year: "2024", title: "W3 Hub at Devcon", href: "https://www.youtube.com/watch?v=U_UN8FRqi5c", image: "/img/icons/w3_cover.png" },
+  { year: "2024", title: "Ethereum Singapore", href: "https://www.youtube.com/watch?v=jfr1UykhQj8", image: "/img/icons/ethereum_singapore_cover.png" },
+  { year: "2023", title: "ETHDenver", href: "https://www.youtube.com/watch?v=0t1aN-qaH9E", image: "/img/icons/eth_denver_cover.png" },
+  { year: "2023", title: "EDCON", href: "https://www.youtube.com/watch?v=C1LMqQ10gSM", image: yt("C1LMqQ10gSM") },
+  { year: "2023", title: "EEA", href: "https://www.youtube.com/watch?v=GpeOMZQCiLI", image: yt("GpeOMZQCiLI") },
+  { year: "2023", title: "CoinDesk Consensus", href: "https://www.youtube.com/shorts/gpCc_NAtNn0", image: yt("gpCc_NAtNn0") },
+  { year: "2021", title: "Chainlink panel", href: "https://www.youtube.com/watch?v=f1j2FwKgk7Q&t=242s", image: yt("f1j2FwKgk7Q") },
+  { year: "2021", title: "ConsenSys Academy", href: "https://docs.google.com/presentation/d/1d-5HRjt_GPkdMdYa1Bbcyw8Vb0AVWl_hFwrnbXT2PhE/edit", image: "/img/icons/consensys_academy_cover.png" },
+];
+
+export const conversations = [
+  {
+    title: "Talks with Vitalik (EIP-7706)",
+    host: "Bankless",
+    length: "1:07:22",
+    href: "https://www.youtube.com/watch?v=c3TV6OhjSfc",
+    image: yt("c3TV6OhjSfc"),
+  },
+  {
+    title: "Education and Organization for Ethereum",
+    host: "Unstoppable Domains",
+    length: "58:16",
+    href: "https://www.youtube.com/watch?v=NLjkQnGL5rI",
+    image: yt("NLjkQnGL5rI"),
+  },
+  {
+    title: "Meet The Herders: Pooja Ranjan",
+    host: "Ethereum Cat Herders",
+    length: "37:34",
+    href: "https://www.youtube.com/watch?v=XCOdX5UmtU4",
+    image: yt("XCOdX5UmtU4"),
+  },
+  {
+    title: "MolochDAO interview",
+    host: "MolochDAO",
+    length: "Article",
+    href: "https://medium.com/molochdao/molochdao-interview-with-pooja-ranjan-of-ethereum-cat-herders-be037f115961",
+    image: "/img/molochdao-thumb.png",
+  },
+];
+
+type ArchiveItem = { title: string; url: string; video?: boolean };
+
+export const archive: { key: string; title: string; image: string; items: ArchiveItem[] }[] = [
+  {
+    key: "media",
+    title: "Media features",
+    image: "/img/archive_media.jpg",
+    items: [
+      { title: "The Merge: 10 key people behind Ethereum's biggest upgrade — The Block", url: "https://www.theblock.co/post/166999/the-merge-10-key-people-behind-ethereums-biggest-upgrade-yet" },
+      { title: "Meet the 10 women who are shaping the future of Ethereum — EtherWorld", url: "https://etherworld.co/2025/03/08/meet-the-10-women-who-are-shaping-the-future-of-ethereum/" },
+      { title: "London hard fork on Ethereum now live — Decrypt", url: "https://decrypt.co/77746/london-hard-fork-ethereum-live" },
+      { title: "Everything you need to know about Shapella — The Block", url: "https://www.theblock.co/post/225655/ethereum-shapella" },
+      { title: "Ethereum 2.0 and the prospect of reverse mutation — Yale Journal of Law & Technology", url: "https://yjolt.org/blog/ethereum-20-and-prospect-reverse-mutation" },
+      { title: "Pectra upgrade: what's new and how to track it — Etherscan", url: "https://info.etherscan.com/pectra-upgrade-whats-new-and-how-to-track-it-on-etherscan/" },
+      { title: "The MEV Letter #91 — Flashbots", url: "https://collective.flashbots.net/t/the-mev-letter-91/4988/1" },
+    ],
+  },
+  {
+    key: "articles",
+    title: "Articles by Pooja",
+    image: "/img/archive_articles.jpg",
+    items: [
+      { title: "Happy 10 years of community building with Ethereum", url: "https://medium.com/ethereum-cat-herders/happy-10-years-of-community-building-with-ethereum-7786bfff67c6" },
+      { title: "Ethereum Cat Herders' wrap for 2024", url: "https://medium.com/ethereum-cat-herders/ethereum-cat-herders-wrap-for-2024-62b029f1dcee" },
+      { title: "It's Pectra time!", url: "https://medium.com/ethereum-cat-herders/its-pectra-time-0cf5561f662c" },
+      { title: "ProgPoW: the Ethereum community speaks", url: "https://hudsonjameson.com/posts/2020-03-02-progpow-the-ethereum-community-speaks/" },
+    ],
+  },
+  {
+    key: "education",
+    title: "Educational resources",
+    image: "/img/archive_education.jpg",
+    items: [
+      { title: "EIPs simplified: history and process explained", url: "https://www.youtube.com/watch?v=xycI1vbxJo8", video: true },
+      { title: "Elements of protocol governance — EDCON 2023", url: "https://www.youtube.com/watch?v=C1LMqQ10gSM", video: true },
+      { title: "Shaping Ethereum's protocol governance & decision-making", url: "https://www.youtube.com/watch?v=U_UN8FRqi5c", video: true },
+      { title: "Understanding Ethereum network upgrades — ConsenSys Academy", url: "https://courses.consensys.net/courses/understanding-ethereum-network-upgrades-dencun-december-2023-january-february-2024" },
+      { title: "EEA monthly education call", url: "https://www.youtube.com/watch?v=LdAlzFPaJpQ", video: true },
+      { title: "Understand EIPs — WiEP Cohort 3", url: "https://youtu.be/WxtcBzv05zM", video: true },
+      { title: "WiEP Cohort 4", url: "https://www.youtube.com/watch?v=equE9PjNtZ0", video: true },
+    ],
+  },
+  {
+    key: "events",
+    title: "Events & appearances",
+    image: "/img/archive_events.jpg",
+    items: [
+      { title: "Devconnect 2025", url: "https://www.youtube.com/watch?v=wH76j1BDZkc", video: true },
+      { title: "EDCON 2025", url: "https://www.youtube.com/watch?v=uVj7JyTbLbg", video: true },
+      { title: "ETH Singapore 2024", url: "https://www.youtube.com/watch?v=jfr1UykhQj8", video: true },
+      { title: "ETHDenver 2024", url: "https://x.com/EthereumDenver/status/1763697260968186109" },
+      { title: "EEA 6th anniversary", url: "https://www.youtube.com/watch?v=GpeOMZQCiLI", video: true },
+      { title: "Empowering women in Ethereum: WiEP introduction", url: "https://www.youtube.com/watch?v=C_zkU-f4tto", video: true },
+      { title: "ETHWMN: opportunities in Web3", url: "https://youtu.be/AbCzQtQWlSE", video: true },
+      { title: "Mainnet NYC: exploring Ethereum with Ethereum Cat Herders", url: "https://youtu.be/oED02-fqsZI", video: true },
+      { title: "Chainlink panel 2021", url: "https://www.youtube.com/watch?v=f1j2FwKgk7Q", video: true },
+    ],
+  },
+  {
+    key: "interviews",
+    title: "Interviews & podcasts",
+    image: "/img/archive_interviews.jpg",
+    items: [
+      { title: "Talks with Vitalik: EIP-7706 — Bankless", url: "https://www.youtube.com/watch?v=c3TV6OhjSfc", video: true },
+      { title: "CNBC interview", url: "https://youtu.be/6lNgLNnfSoQ?t=360", video: true },
+      { title: "Education and organization for Ethereum — Unstoppable Domains", url: "https://www.youtube.com/watch?v=NLjkQnGL5rI", video: true },
+      { title: "Meet the Herders: Pooja Ranjan", url: "https://www.youtube.com/watch?v=XCOdX5UmtU4", video: true },
+      { title: "MolochDAO interview with Pooja Ranjan", url: "https://medium.com/molochdao/molochdao-interview-with-pooja-ranjan-of-ethereum-cat-herders-be037f115961" },
+      { title: "GM Bus radio interview", url: "https://gmbusbus.podbean.com/e/gm-bus-radio-interview-with-pooja-ranjan/" },
+      { title: "CoinDesk short", url: "https://www.youtube.com/shorts/gpCc_NAtNn0", video: true },
+      { title: "EthStaker short", url: "https://www.youtube.com/shorts/tRIvDvcRhbU", video: true },
+    ],
+  },
+  {
+    key: "community",
+    title: "Community mentions",
+    image: "/img/archive_community.jpg",
+    items: [
+      { title: "How code changes are made to the world's most sprawling blockchain — Galaxy Research", url: "https://www.galaxy.com/insights/research/ethereum-governance" },
+      { title: "How the Ethereum community reacted to The Merge — The Block", url: "https://www.theblock.co/post/170334/an-incredible-feat-how-the-ethereum-community-reacted-to-the-merge" },
+      { title: "An introduction to EIPs with Tim Beiko — Unstoppable Domains", url: "https://unstoppabledomains.com/blog/an-introduction-to-eips-with-tim-beiko-from-the-ethereum-foundation" },
+      { title: "Ethereum network upgrades part 1: the process — Metrika", url: "https://blog.metrika.co/ethereum-network-upgrades-part-1-the-process-7112ba57f3fb" },
+      { title: "Gratitude to women who have made huge contributions — r/ethereum", url: "https://www.reddit.com/r/ethereum/comments/11lslel/gratitude_to_women_who_have_made_huge/" },
+      { title: "Tim Beiko inviting support for Ethereum Cat Herders", url: "https://twitter.com/TimBeiko/status/1734679319430250530" },
+      { title: "Hudson Jameson steps down from Ethereum core developers — Decrypt", url: "https://decrypt.co/52240/hudson-jameson-steps-down-from-ethereum-core-developers" },
+      { title: "Rhino Review: Ethereum staking journal", url: "https://rhinoreview.substack.com/p/rhino-review-ethereum-staking-journal-030" },
+    ],
+  },
+];

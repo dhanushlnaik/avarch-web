@@ -1,0 +1,149 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import CtaBand from "../components/CtaBand.astro";
+import Icon from "../components/Icon.astro";
+import Img from "../components/Img.astro";
+import { services, stats } from "../data/site";
+import { founder } from "../data/founder";
+
+const principles = [
+  {
+    title: "Open by default",
+    body: "Our tools are open-source and our research is free to read. Public goods compound when anyone can build on them.",
+  },
+  {
+    title: "Explain, don't obscure",
+    body: "Protocol changes affect everyone. We write and record for the curious newcomer as much as the core developer.",
+  },
+  {
+    title: "Learn by contributing",
+    body: "The fastest way into Ethereum is to ship something real. We give students that first meaningful contribution.",
+  },
+  {
+    title: "Consistency over hype",
+    body: "We've been documenting Ethereum's network upgrades since 2017 — through bull and bear markets alike.",
+  },
+];
+---
+<Layout title="About" description="Avarch is a blockchain software studio building products, media and education for the Ethereum ecosystem since 2017.">
+  <PageHero
+    eyebrow="About Avarch"
+    title="A software studio for the <em class='text-iris-600'>Ethereum</em> ecosystem."
+    lead="From blockchain media to data analytics and explorers, Avarch builds products and services that help people understand Ethereum — and helps the next generation of developers start contributing to it."
+  />
+
+  <!-- Story -->
+  <section class="container-page mt-20 grid gap-12 lg:grid-cols-[1fr_1.3fr]">
+    <SectionHeader eyebrow="01 — Our story" title="Started with a publication. Grew into a studio." />
+    <div class="space-y-5 text-lg leading-relaxed text-ink-2">
+      <p>
+        Avarch LLC was founded in 2017 by <a href="/founder" class="font-medium text-ink underline decoration-iris-300 underline-offset-4 hover:decoration-iris-600">Pooja Ranjan</a>.
+        Its first project, <a href="https://etherworld.co" target="_blank" rel="noopener" class="font-medium text-ink underline decoration-iris-300 underline-offset-4 hover:decoration-iris-600">EtherWorld</a>,
+        set out to make blockchain approachable for mainstream readers — and grew into a trusted source on Ethereum network upgrades, testnets and research.
+      </p>
+      <p>
+        Covering the protocol closely revealed gaps in the tooling around it. That led to
+        <a href="https://eipsinsight.com" target="_blank" rel="noopener" class="font-medium text-ink underline decoration-iris-300 underline-offset-4 hover:decoration-iris-600">EIPsInsight</a>,
+        an analytics platform for Ethereum Improvement Proposals, and more recently to
+        <a href="https://bloblens.com" target="_blank" rel="noopener" class="font-medium text-ink underline decoration-iris-300 underline-offset-4 hover:decoration-iris-600">BlobLens</a>
+        for blob-space data and EthShala for structured learning.
+      </p>
+      <p>
+        Alongside the products, we publish
+        <a href="https://etherworld.co/tag/enigma/" target="_blank" rel="noopener" class="underline decoration-line-strong underline-offset-4 hover:decoration-ink">technical blogs</a>,
+        produce <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA/playlists" target="_blank" rel="noopener" class="underline decoration-line-strong underline-offset-4 hover:decoration-ink">ELI5 videos</a>
+        and share in-depth <a href="https://etherworld.co/tag/research/" target="_blank" rel="noopener" class="underline decoration-line-strong underline-offset-4 hover:decoration-ink">research reports</a>
+        on blockchain protocols.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="container-page mt-20">
+    <dl class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      {stats.map((s) => (
+        <div class="card p-6">
+          <dd class="display text-5xl text-iris-600">{s.value}</dd>
+          <dt class="mt-2 text-sm text-ink-2">{s.label}</dt>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <!-- What we do -->
+  <section class="mt-28 border-y border-line bg-surface py-20">
+    <div class="container-page">
+      <SectionHeader eyebrow="02 — What we do" title="Four ways we serve the ecosystem" />
+      <div class="mt-12 grid gap-px overflow-hidden rounded-[1.5rem] border border-line bg-line sm:grid-cols-2">
+        {services.map((s, i) => (
+          <div class="bg-surface p-8">
+            <div class="flex items-center justify-between">
+              <span class="grid size-11 place-items-center rounded-xl bg-iris-50 text-iris-600"><Icon name={s.icon} size={22} /></span>
+              <span class="font-mono text-sm text-muted">0{i + 1}</span>
+            </div>
+            <h3 class="display mt-6 text-3xl">{s.title}</h3>
+            <p class="mt-3 text-ink-2">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="container-page mt-28">
+    <SectionHeader eyebrow="03 — How we work" title="What we believe" />
+    <ol class="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2">
+      {principles.map((p, i) => (
+        <li class="flex gap-5 border-t border-line pt-6">
+          <span class="display text-4xl text-iris-300">{i + 1}</span>
+          <div>
+            <h3 class="text-xl font-semibold">{p.title}</h3>
+            <p class="mt-2 text-ink-2">{p.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Internship -->
+  <section class="container-page mt-28">
+    <div class="grid overflow-hidden rounded-[2rem] border border-line bg-surface md:grid-cols-2">
+      <Img src="/img/community_banner.jpg" alt="A community gathering at sunset" w={600} sizes="(min-width: 768px) 50vw, 100vw" class="h-full min-h-64 w-full object-cover" />
+      <div class="p-8 sm:p-12">
+        <p class="eyebrow">04 — Internships</p>
+        <h2 class="display mt-3 text-4xl">Paid, on-the-job blockchain experience</h2>
+        <p class="mt-4 text-ink-2">
+          Since 2020, we've worked with 50+ aspiring contributors from universities across India and beyond — on application development, technical writing and educational video.
+        </p>
+        <ul class="mt-6 space-y-3 text-ink-2">
+          {["Ship to real products used by the community", "Mentorship from people working on Ethereum's core processes", "Published work you can point to"].map((t) => (
+            <li class="flex gap-3"><Icon name="check" size={20} class="mt-0.5 shrink-0 text-moss-500" />{t}</li>
+          ))}
+        </ul>
+        <a href="/partners" class="mt-8 inline-flex items-center gap-2 font-medium text-iris-700 hover:text-iris-900">
+          See our academic partners <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="container-page mt-28 grid items-center gap-10 md:grid-cols-[auto_1fr]">
+    <Img src={founder.portrait} alt="Pooja Ranjan" w={256} class="size-48 rounded-[2rem] border border-line object-cover sm:size-64" />
+    <div>
+      <p class="eyebrow">05 — Leadership</p>
+      <h2 class="display mt-3 text-4xl sm:text-5xl">{founder.name}</h2>
+      <p class="mt-1 text-muted">{founder.role}</p>
+      <p class="mt-5 max-w-2xl text-lg text-ink-2">
+        Pooja joined the blockchain community in 2016 and founded Avarch a year later. As Herder-in-Chief of Ethereum Cat Herders she helps coordinate Ethereum's network upgrades, and through EIPsInsight and PEEPanEIP she makes the EIP process easier to follow.
+      </p>
+      <a href="/founder" class="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 font-medium text-paper transition-colors hover:bg-iris-700">
+        Read the full story <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

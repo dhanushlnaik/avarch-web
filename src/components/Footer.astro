@@ -1,0 +1,65 @@
+---
+import { nav, projects, site, socials } from "../data/site";
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+
+const year = new Date().getFullYear();
+const live = projects.filter((p) => p.status !== "Archived");
+---
+<footer class="mt-24 border-t border-line bg-paper-2/60">
+  <div class="container-page grid gap-12 py-16 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <Logo />
+      <p class="mt-5 max-w-sm text-ink-2">{site.tagline}</p>
+      <a
+        href={`mailto:${site.email}`}
+        class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-iris-700 underline decoration-iris-200 underline-offset-4 hover:decoration-iris-600"
+      >
+        <Icon name="mail" size={16} />
+        {site.email}
+      </a>
+    </div>
+
+    <div class="md:col-span-2">
+      <h2 class="eyebrow !text-muted">Company</h2>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a class="text-ink-2 hover:text-ink" href="/">Home</a></li>
+        {nav.map((n) => <li><a class="text-ink-2 hover:text-ink" href={n.href}>{n.label}</a></li>)}
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <h2 class="eyebrow !text-muted">Projects</h2>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {live.map((p) => (
+          <li><a class="text-ink-2 hover:text-ink" href={p.href} target="_blank" rel="noopener">{p.name}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="md:col-span-3">
+      <h2 class="eyebrow !text-muted">Follow</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener"
+              aria-label={s.label}
+              class="grid size-10 place-items-center rounded-full border border-line bg-surface text-ink-2 transition-colors hover:border-ink hover:text-ink"
+            >
+              <Icon name={s.icon} size={17} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-line">
+    <div class="container-page flex flex-col gap-2 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} {site.legalName}. All rights reserved.</p>
+      <p>Building for Ethereum since {site.founded}.</p>
+    </div>
+  </div>
+</footer>

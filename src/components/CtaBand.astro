@@ -1,0 +1,39 @@
+---
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  body?: string;
+}
+const {
+  title = "Building something for Ethereum?",
+  body = "We partner with teams, universities and communities on products, research and education. Tell us what you're working on.",
+} = Astro.props;
+---
+<section class="container-page mt-24">
+  <div class="relative overflow-hidden rounded-[2rem] bg-ink px-6 py-14 text-paper sm:px-14 sm:py-16">
+    <div class="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-iris-600/40 blur-3xl" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -bottom-32 left-1/3 size-72 rounded-full bg-ember-500/20 blur-3xl" aria-hidden="true"></div>
+    <div class="relative grid items-end gap-8 md:grid-cols-[1fr_auto]">
+      <div>
+        <h2 class="display text-4xl sm:text-5xl">{title}</h2>
+        <p class="mt-4 max-w-xl text-paper/70">{body}</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-3 font-medium text-ink transition-colors hover:bg-iris-100"
+        >
+          Start a conversation <Icon name="arrow-right" size={18} />
+        </a>
+        <a
+          href={`mailto:${site.email}`}
+          class="inline-flex items-center gap-2 rounded-full border border-paper/25 px-5 py-3 font-medium text-paper transition-colors hover:border-paper/60"
+        >
+          <Icon name="mail" size={18} /> Email us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
