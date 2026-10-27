@@ -43,10 +43,10 @@ const topics = [
   { label: "Projects", href: "https://etherworld.co/tag/projects/", image: "/img/portfolio/Projects.jpeg" },
 ];
 ---
-<Layout title="EtherWorld" description="EtherWorld is Avarch's Ethereum publication — news, network-upgrade coverage, technical deep dives and video explainers since 2017." image="/img/portfolio/etherworld.png">
+<Layout title="EtherWorld" description="EtherWorld is Avarch's Ethereum publication, covering news, network upgrades and research in articles and videos since 2017." image="/img/portfolio/etherworld.png">
   <section class="border-b border-line">
     <div class="container-page grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2">
-      <div>
+      <div class="enter">
         <a href="/projects" class="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
           <Icon name="arrow-right" size={14} class="rotate-180" /> All projects
         </a>
@@ -56,24 +56,24 @@ const topics = [
         </div>
         <h1 class="display mt-5 text-6xl sm:text-7xl">EtherWorld</h1>
         <p class="mt-5 max-w-xl text-lg text-ink-2">
-          A hub for Ethereum news, project updates, technical blogs and events. EtherWorld gives newcomers a place to learn and gives the community a place to contribute.
+          EtherWorld publishes Ethereum news, project updates, technical articles and event coverage, and welcomes guest contributors.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://etherworld.co" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-medium text-paper hover:bg-iris-700">
+          <a href="https://etherworld.co" target="_blank" rel="noopener" class="btn btn-dark">
             Read EtherWorld <Icon name="arrow-up-right" size={18} />
           </a>
-          <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-6 py-3.5 font-medium hover:border-ink">
+          <a href="https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA" target="_blank" rel="noopener" class="btn btn-ghost">
             <Icon name="youtube" size={18} /> Watch on YouTube
           </a>
         </div>
       </div>
-      <Img src="/img/portfolio/etherworld.png" alt="EtherWorld website preview" w={600} sizes="(min-width: 1024px) 50vw, 100vw" loading="eager" fetchpriority="high" class="w-full rounded-[1.5rem] border border-line shadow-[0_30px_60px_-40px_rgb(22_23_29/0.5)]" />
+      <Img src="/img/portfolio/etherworld.png" alt="EtherWorld website preview" style="--d: 2" w={600} sizes="(min-width: 1024px) 50vw, 100vw" loading="eager" fetchpriority="high" class="enter-pop w-full rounded-[1.5rem] border border-line shadow-[0_30px_60px_-40px_rgb(22_23_29/0.5)]" />
     </div>
   </section>
 
   <section class="container-page mt-20">
     <SectionHeader eyebrow="Browse by topic" title="What we cover" />
-    <ul class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+    <ul data-reveal-group class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
       {topics.map((t) => (
         <li>
           <a href={t.href} target="_blank" rel="noopener" class="group relative block aspect-[4/3] overflow-hidden rounded-2xl">
@@ -91,7 +91,7 @@ const topics = [
   {collections.map((c) => (
     <section class="container-page mt-20">
       <h2 class="display text-3xl sm:text-4xl">{c.title}</h2>
-      <ul class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul data-reveal-group class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {c.items.map((a) => (
           <li>
             <a href={a.href} target="_blank" rel="noopener" class="card group block overflow-hidden transition-colors hover:border-line-strong">
@@ -99,7 +99,7 @@ const topics = [
                 <Img src={a.image} alt="" w={400} class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
               </div>
               <div class="flex items-start justify-between gap-4 p-5">
-                <h3 class="font-semibold leading-snug group-hover:text-iris-700">{a.title}</h3>
+                <h3 class="font-semibold leading-snug group-hover:text-sun-800">{a.title}</h3>
                 <Icon name="arrow-up-right" size={18} class="mt-0.5 shrink-0 text-muted" />
               </div>
             </a>
@@ -110,7 +110,7 @@ const topics = [
   ))}
 
   <section class="container-page mt-24">
-    <div class="grid gap-5 md:grid-cols-3">
+    <div data-reveal-group class="grid gap-5 md:grid-cols-3">
       {testimonials.slice(0, 3).map((t) => (
         <figure class="card p-6">
           <blockquote class="font-serif text-xl leading-snug">“{t.quote}”</blockquote>
@@ -123,5 +123,5 @@ const topics = [
     </div>
   </section>
 
-  <CtaBand title="Write or partner with EtherWorld" body="Media partnerships, research collaborations and guest contributions are always welcome." />
+  <CtaBand title="Write or partner with EtherWorld" body="Media partnerships, research collaborations and guest contributions are welcome." />
 </Layout>

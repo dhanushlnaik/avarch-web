@@ -4,7 +4,7 @@ export const site = {
   url: "https://avarch.org",
   tagline: "Building tools, media and education for the Ethereum ecosystem.",
   description:
-    "Avarch is a blockchain software studio behind EtherWorld, EIPsInsight, BlobLens and EthShala — building open tools, publishing research and helping the next generation of Ethereum contributors get started.",
+    "Avarch is a blockchain software studio behind EtherWorld, EIPsInsight, BlobLens and EthShala. We build open tools, publish research and help new contributors get started on Ethereum.",
   email: "contact@etherworld.co",
   founded: 2017,
 };
@@ -49,9 +49,9 @@ export const projects: Project[] = [
     year: "2017",
     status: "Active",
     category: "Media & Research",
-    summary: "Ethereum news, technical deep dives and explainer videos since 2017.",
+    summary: "Ethereum news, technical articles and explainer videos since 2017.",
     description:
-      "Avarch's first project and one of the longest-running independent Ethereum publications. EtherWorld covers network upgrades, testnets, EIPs and research — written for builders and curious newcomers alike.",
+      "Avarch's first project, publishing since 2017. EtherWorld covers network upgrades, testnets, EIPs and research for developers and newcomers alike.",
     href: "https://etherworld.co",
     internal: "/projects/etherworld",
     logo: "/img/icons/etherworld_badge.png",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     category: "Data & Analytics",
     summary: "The research and tracking hub for Ethereum Improvement Proposals.",
     description:
-      "Dashboards, monthly reports and status tracking for every EIP, ERC and RIP — helping editors, authors and client teams see where proposals stand. Supported by the Ethereum Foundation ESP and Gitcoin Grants.",
+      "Dashboards, monthly reports and status tracking for every EIP, ERC and RIP, so editors, authors and client teams can see where each proposal stands. Supported by the Ethereum Foundation ESP and Gitcoin Grants.",
     href: "https://eipsinsight.com",
     logo: "/img/icons/eipsinsight_icon.png",
     cover: "/img/portfolio/eipsinsight_logo.png",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     category: "Analytics",
     summary: "Specialised analytics for Ethereum blob space and rollup data.",
     description:
-      "Since EIP-4844, rollups post their data in blobs. BlobLens tracks blob usage, fees and per-rollup activity so researchers and L2 teams can see how data availability is really being used.",
+      "Since EIP-4844, rollups post their data in blobs. BlobLens tracks blob usage, fees and per-rollup activity so researchers and L2 teams can see how blob space is being used.",
     href: "https://bloblens.com",
     logo: "/img/icons/bloblens_logo.png",
     cover: "/img/portfolio/bloblens.png",
@@ -101,9 +101,9 @@ export const projects: Project[] = [
     year: "2026",
     status: "New",
     category: "Education",
-    summary: "An education platform that makes Ethereum's core concepts approachable.",
+    summary: "Courses that explain Ethereum's core concepts step by step.",
     description:
-      "Structured learning paths that take builders from first principles to protocol-level understanding — the next step in Avarch's long-running commitment to education.",
+      "Structured courses that start with the basics and work up to how the protocol actually works. It builds on the articles and videos Avarch has published since 2017.",
     href: "https://www.etherworld.co",
     logo: "/img/icons/ethshala_logo.png",
     cover: "/img/portfolio/ethshala_logo.png",
@@ -139,7 +139,7 @@ export const stats = [
 export const services = [
   {
     title: "Products & tooling",
-    body: "Open-source dashboards, explorers and analytics that make Ethereum's data legible — EIPsInsight and BlobLens are used by editors, researchers and L2 teams.",
+    body: "Open-source dashboards and analytics for Ethereum data. EIPsInsight and BlobLens are used by EIP editors, researchers and L2 teams.",
     icon: "code",
   },
   {
@@ -149,12 +149,12 @@ export const services = [
   },
   {
     title: "Education",
-    body: "ELI5 videos, the PEEPanEIP series and EthShala learning paths that turn complex protocol changes into something anyone can follow.",
+    body: "ELI5 videos, the PEEPanEIP interview series and EthShala courses on how Ethereum works and what each upgrade changes.",
     icon: "book",
   },
   {
     title: "Developer pipeline",
-    body: "Paid internships that give students real, on-the-job blockchain experience across development, writing and video production.",
+    body: "Paid internships where students work on our products, articles and videos.",
     icon: "users",
   },
 ];
@@ -218,14 +218,24 @@ export const testimonials = [
   },
 ];
 
+const EDCON_URL =
+  "https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/";
+
 export const ecosystemPartners = [
-  { name: "Devcon", href: "https://devcon.org/", logo: "/img/partners/devcon_new.png" },
-  { name: "Giveth", href: "https://giveth.io/", logo: "/img/partners/giveth_new.png" },
-  { name: "Mempool", href: "https://mempool.space/", logo: "/img/partners/mempool_new.png" },
-  {
-    name: "EDCON",
-    href: "https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/",
-  },
+  { name: "Devcon", href: "https://devcon.org/", logo: "/img/partners/devcon-8.svg", logoClass: "h-14 sm:h-16" },
+  { name: "EDCON", href: EDCON_URL, logo: "/img/partners/edcon.png" },
+  { name: "Giveth", href: "https://giveth.io/", logo: "/img/partners/giveth.png" },
+  { name: "Mempool", href: "https://mempool.space/", logo: "/img/partners/mempool.png" },
+];
+
+/** Home-page logo grid. `label` is shown beside icon-only marks; `logoClass` overrides the default height. */
+export const logoCloud: { name: string; logo: string; href?: string; label?: string; kind: string; logoClass?: string }[] = [
+  { name: "Ethereum Foundation", logo: "/img/partners/ethereum.svg", label: "Ethereum Foundation", href: "https://esp.ethereum.foundation/", kind: "Grant" },
+  { name: "Gitcoin", logo: "/img/partners/gitcoin.svg", label: "Gitcoin", href: "https://www.gitcoin.co/", kind: "Grants" },
+  ...ecosystemPartners.map((p) => ({ ...p, kind: "Ecosystem" })),
+  { name: "NMAM Institute of Technology", logo: "/img/partners/nmamit.png", label: "NMAMIT", kind: "Academic" },
+  { name: "Heritage Institute of Technology", logo: "/img/partners/heritage.png", label: "Heritage", kind: "Academic" },
+  { name: "HETC", logo: "/img/partners/hetc.png", label: "HETC", kind: "Academic" },
 ];
 
 export const academicPartners = [
@@ -249,7 +259,7 @@ export const academicPartners = [
 
 export const grants = [
   {
-    name: "Ethereum Foundation — Ecosystem Support Program",
+    name: "Ethereum Foundation Ecosystem Support Program",
     period: "Q2 2025",
     logo: "/img/partners/ethereum.svg",
     body: "Funding to maintain EIPsInsight's data pipelines, improve charts and analytics, and keep the project open-source and community-driven.",
@@ -263,14 +273,14 @@ export const grants = [
     tags: ["Community"],
   },
   {
-    name: "Gitcoin Grants Round 21 — Asia",
+    name: "Gitcoin Grants Round 21 (Asia)",
     period: "GG21",
     logo: "/img/partners/gitcoin.svg",
     body: "Support for ecosystem and community-driven initiatives across Asia.",
     tags: ["Community", "Asia"],
   },
   {
-    name: "Gitcoin Grants Round 18 — Core",
+    name: "Gitcoin Grants Round 18 (Core)",
     period: "GG18",
     logo: "/img/partners/gitcoin.svg",
     body: "Covering Web3 open-source software, community & education, and Ethereum infrastructure.",
@@ -287,8 +297,8 @@ export const collaborations = [
     date: "Oct 2020",
   },
   {
-    title: "EDCON 2020 — Community Conference",
-    body: "Media partner for EDCON, the Community Ethereum Development Conference, streamed virtually on August 9–11, 2020.",
+    title: "EDCON 2020",
+    body: "Media partner for EDCON, the Community Ethereum Development Conference, streamed online from August 9 to 11, 2020.",
     image: "https://etherworld.co/content/images/size/w1000/2020/07/Screen-Shot-2020-07-27-at-10.11.18-AM-1.png",
     href: "https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/",
     date: "Jul 2020",
@@ -296,11 +306,11 @@ export const collaborations = [
 ];
 
 export const playlists = [
-  { title: "Ethereum Explained", image: "/img/portfolio/Ethereum-video.jpeg", body: "Accounts, transactions, gas and smart contracts — the complete beginner's guide." },
+  { title: "Ethereum Explained", image: "/img/portfolio/Ethereum-video.jpeg", body: "Accounts, transactions, gas and smart contracts, explained for beginners." },
   { title: "Ethereum Development", image: "/img/portfolio/Ethereum.jpeg", body: "Hands-on walkthroughs for developers building on Ethereum." },
-  { title: "Web3 & Blockchain Basics", image: "/img/portfolio/Blockchain.jpeg", body: "The fundamentals of decentralised systems, without the jargon." },
-  { title: "MetaMask", image: "/img/portfolio/Metamask.jpeg", body: "Set up, secure and get the most out of the most popular wallet." },
-  { title: "Blockipedia", image: "/img/portfolio/Blockipedia.jpeg", body: "Bite-sized definitions of the terms you'll meet in the ecosystem." },
+  { title: "Web3 & Blockchain Basics", image: "/img/portfolio/Blockchain.jpeg", body: "The basics of decentralised systems." },
+  { title: "MetaMask", image: "/img/portfolio/Metamask.jpeg", body: "Setting up and securing a MetaMask wallet." },
+  { title: "Blockipedia", image: "/img/portfolio/Blockipedia.jpeg", body: "Short definitions of common blockchain terms." },
 ];
 
 export const youtubePlaylists = "https://www.youtube.com/channel/UCnceAY-vAQsO8TgGAj5SGFA/playlists";

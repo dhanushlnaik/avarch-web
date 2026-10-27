@@ -10,14 +10,14 @@ import { projects } from "../../data/site";
 const live = projects.filter((p) => p.status !== "Archived");
 const archived = projects.filter((p) => p.status === "Archived");
 ---
-<Layout title="Projects" description="EtherWorld, EIPsInsight, BlobLens and EthShala — open-source platforms and publications built by Avarch for the Ethereum ecosystem.">
+<Layout title="Projects" description="EtherWorld, EIPsInsight, BlobLens and EthShala: open-source platforms and publications built by Avarch for Ethereum.">
   <PageHero
     eyebrow="Portfolio"
-    title="Advancing the <em class='text-iris-600'>Ethereum</em> ecosystem"
-    lead="A family of open-source tools, data platforms and educational initiatives — each built to make some part of Ethereum easier to understand."
+    title="Advancing the <em>Ethereum</em> ecosystem"
+    lead="Open-source tools, data platforms and education projects, each built to make part of Ethereum easier to understand."
   />
 
-  <section class="container-page mt-16 grid gap-5 md:grid-cols-2">
+  <section data-reveal-group class="container-page mt-16 grid gap-5 md:grid-cols-2">
     {live.map((p) => <ProjectCard project={p} />)}
   </section>
 
@@ -30,12 +30,12 @@ const archived = projects.filter((p) => p.status === "Archived");
           <h3 class="font-serif text-2xl">{p.name} <span class="ml-2 align-middle font-mono text-xs text-muted">{p.year}</span></h3>
           <p class="mt-1 text-ink-2">{p.summary}</p>
         </div>
-        <span class="inline-flex items-center gap-1.5 text-sm font-medium text-iris-700">
+        <span class="inline-flex items-center gap-1.5 text-sm font-medium text-sun-800">
           Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-0.5" />
         </span>
       </a>
     ))}
   </section>
 
-  <CtaBand title="Have an idea for the ecosystem?" body="We collaborate on research, tooling and education. If you're building something that makes Ethereum easier to understand, we'd love to hear about it." />
+  <CtaBand title="Have an idea for the ecosystem?" body="We collaborate on research, tooling and education. If you're building something that makes Ethereum easier to understand, get in touch." />
 </Layout>

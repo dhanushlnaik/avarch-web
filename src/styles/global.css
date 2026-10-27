@@ -1,42 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Surfaces */
-  --color-paper: #f7f5f0;
-  --color-paper-2: #efece4;
+  /* Surfaces: warm cream paper */
+  --color-paper: #fbf8ef;
+  --color-paper-2: #f3eedf;
   --color-surface: #ffffff;
-  --color-line: #e3dfd5;
-  --color-line-strong: #cfc9bb;
+  --color-line: #e8e1cc;
+  --color-line-strong: #d3c9ad;
 
-  /* Text */
-  --color-ink: #16171d;
-  --color-ink-2: #3d404b;
-  --color-muted: #6b6e78;
+  /* Ink: matches the logo */
+  --color-ink: #121110;
+  --color-ink-2: #3b3833;
+  --color-muted: #6f6a5e;
 
-  /* Brand: iris */
-  --color-iris-50: #f2f1fe;
-  --color-iris-100: #e4e2fd;
-  --color-iris-200: #cbc6fb;
-  --color-iris-300: #a79ff7;
-  --color-iris-500: #6355ea;
-  --color-iris-600: #4c3fd6;
-  --color-iris-700: #3c31b0;
-  --color-iris-900: #1f1a5c;
+  /* Brand: sunflower. Use 300 to 500 as fills; 800 for text on light surfaces. */
+  --color-sun-50: #fffbea;
+  --color-sun-100: #fff4c4;
+  --color-sun-200: #ffea8f;
+  --color-sun-300: #ffdf5c;
+  --color-sun-400: #ffd12e;
+  --color-sun-500: #f4b400;
+  --color-sun-600: #d39200;
+  --color-sun-800: #7a5200;
+  --color-sun-900: #4a3200;
 
-  /* Accent: ember (used sparingly) */
-  --color-ember-100: #fbe6d8;
-  --color-ember-500: #e0733a;
-  --color-ember-600: #c75e27;
-
-  --color-moss-500: #2f9e6a;
+  --color-moss-500: #2e8b57;
+  --color-danger: #b42318;
 
   --radius-card: 1.25rem;
 
-  --animate-marquee: marquee 40s linear infinite;
+  --shadow-hard: 4px 4px 0 0 var(--color-ink);
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-ink);
+
+  --animate-marquee: marquee 45s linear infinite;
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -52,14 +52,13 @@
   }
   body {
     @apply bg-paper text-ink font-sans antialiased;
-    font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    @apply bg-iris-200 text-ink;
+    @apply bg-sun-300 text-ink;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-iris-600;
+    @apply outline-2 outline-offset-2 outline-ink;
   }
   h1, h2, h3 {
     text-wrap: balance;
@@ -87,19 +86,42 @@
   }
 }
 
+/* Small mono label with a yellow square marker. */
 @utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-iris-600);
+  color: var(--color-ink-2);
+  &::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 2px;
+    background: var(--color-sun-400);
+    box-shadow: 0 0 0 1px var(--color-ink);
+  }
 }
 
+/* Headline type. <em> inside gets a highlighter stroke. */
 @utility display {
   font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  letter-spacing: -0.025em;
   line-height: 1.02;
+  & em {
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(transparent 58%, var(--color-sun-300) 58%, var(--color-sun-300) 92%, transparent 92%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-inline: 0.06em;
+  }
 }
 
 @utility card {
@@ -108,8 +130,166 @@
   border-radius: var(--radius-card);
 }
 
+/* Lift with a hard ink shadow; pairs with `card` on interactive cards. */
+@utility lift {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  &:hover,
+  &:focus-within {
+    transform: translate(-3px, -3px);
+    border-color: var(--color-ink);
+    box-shadow: var(--shadow-hard);
+  }
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-ink);
+  padding: 0.8rem 1.4rem;
+  font-weight: 500;
+  line-height: 1.25;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, color 150ms ease;
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+}
+
+@utility btn-primary {
+  background: var(--color-sun-400);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-hard-sm);
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hard);
+  }
+}
+
+@utility btn-dark {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  &:hover {
+    background: var(--color-ink-2);
+  }
+}
+
+@utility btn-ghost {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  &:hover {
+    background: var(--color-sun-100);
+  }
+}
+
 @utility grain {
-  background-image:
-    radial-gradient(circle at 1px 1px, rgb(22 23 29 / 0.07) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgb(18 17 16 / 0.08) 1px, transparent 0);
   background-size: 22px 22px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion. Everything below is switched off by the reduced-motion rule */
+/* in the base layer.                                                  */
+/* ------------------------------------------------------------------ */
+
+/* Cross-document page transitions (no client router needed). */
+@view-transition {
+  navigation: auto;
+}
+
+/* The header stays put while the page content changes underneath it. */
+header {
+  view-transition-name: site-header;
+}
+
+::view-transition-old(root) {
+  animation: vt-out 180ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(root) {
+  animation: vt-in 380ms cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+}
+
+@keyframes vt-out {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+@keyframes vt-in {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* Load-in for hero content. Stagger with style="--d: 2". */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.94) rotate(-2deg); }
+}
+@utility enter {
+  animation: rise 700ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: calc(var(--d, 0) * 90ms + 80ms);
+}
+@utility enter-pop {
+  animation: pop 900ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: calc(var(--d, 0) * 90ms + 150ms);
+}
+
+/* Gentle idle float for small decorative pieces. */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@utility float {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: calc(var(--d, 0) * -1.4s);
+}
+
+/* Scroll reveal. Content is only hidden once JS has marked the page, so the
+   site stays fully visible without JavaScript. Uses an animation rather than
+   a transition so it never fights the cards' own hover transitions. */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(22px); }
+}
+@layer base {
+  .js [data-reveal]:not(.is-visible),
+  .js [data-reveal-group]:not(.is-visible) > * {
+    opacity: 0;
+  }
+  .js [data-reveal].is-visible,
+  .js [data-reveal-group].is-visible > * {
+    animation: reveal 750ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(min(var(--i, 0), 10) * 70ms);
+  }
+}
+
+/* Header picks up a shadow once the page has scrolled. */
+header[data-scrolled] {
+  box-shadow: 0 8px 24px -18px rgb(18 17 16 / 0.35);
+}
+
+/* Footer masthead: letters rise out of a clipped line, then lift on hover. */
+@keyframes letter-rise {
+  from { opacity: 0; transform: translateY(105%); }
+}
+@layer base {
+  .js .wordmark.is-visible > * {
+    animation-name: letter-rise;
+    animation-duration: 1000ms;
+  }
+}
+.wordmark-letter {
+  display: inline-block;
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1), color 250ms ease;
+  &:hover {
+    transform: translateY(-0.06em) rotate(-3deg);
+    color: var(--color-paper);
+  }
 }
