@@ -12,6 +12,7 @@ export const site = {
 export const nav = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
+  { label: "Team", href: "/team" },
   { label: "Founder", href: "/founder" },
   { label: "Partners", href: "/partners" },
   { label: "Contact", href: "/contact" },
@@ -71,7 +72,7 @@ export const projects: Project[] = [
     description:
       "Dashboards, monthly reports and status tracking for every EIP, ERC and RIP, so editors, authors and client teams can see where each proposal stands. Supported by the Ethereum Foundation ESP and Gitcoin Grants.",
     href: "https://eipsinsight.com",
-    logo: "/img/icons/eipsinsight_icon.png",
+    logo: "/img/logos/eipsinsight.png",
     cover: "/img/portfolio/eipsinsight_logo.png",
     links: [
       { label: "X", href: "https://x.com/EIPsInsight" },
@@ -88,7 +89,7 @@ export const projects: Project[] = [
     description:
       "Since EIP-4844, rollups post their data in blobs. BlobLens tracks blob usage, fees and per-rollup activity so researchers and L2 teams can see how blob space is being used.",
     href: "https://bloblens.com",
-    logo: "/img/icons/bloblens_logo.png",
+    logo: "/img/logos/bloblens.png",
     cover: "/img/portfolio/bloblens.png",
     links: [
       { label: "X", href: "https://twitter.com/bloblens" },
@@ -123,7 +124,7 @@ export const projects: Project[] = [
       "Built with BitsBeat, BlockAction offered client-side wallet creation and real-time transaction tracking for Ethereum and Bitcoin, and served as an explorer for early Beacon Chain testnets.",
     href: "/projects/blockaction",
     internal: "/projects/blockaction",
-    logo: "/img/general/blockaction1.png",
+    logo: "/img/logos/blockaction.png",
     cover: "/img/general/blockaction1.png",
     links: [],
   },

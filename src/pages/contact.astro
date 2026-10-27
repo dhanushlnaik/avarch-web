@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import { site, socials } from "../data/site";
+import Faq from "../components/Faq.astro";
 
 const topics = ["Project development", "Research & consulting", "Partnership", "Internships", "Speaking & media", "Something else"];
 const inputClass =
@@ -85,6 +86,8 @@ const inputClass =
       </form>
     </div>
   </section>
+
+  <Faq />
 </Layout>
 
 <script define:vars={{ email: site.email }}>
