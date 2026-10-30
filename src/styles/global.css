@@ -293,3 +293,11 @@ header[data-scrolled] {
     color: var(--color-paper);
   }
 }
+
+/* Announcement bar. Named so it holds still during page transitions. */
+.event-banner {
+  view-transition-name: event-banner;
+}
+.event-banner-hidden .event-banner {
+  display: none;
+}

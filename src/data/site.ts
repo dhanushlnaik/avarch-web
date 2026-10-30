@@ -9,6 +9,18 @@ export const site = {
   founded: 2017,
 };
 
+/** Time-boxed announcement bar. Hidden automatically once `end` has passed. */
+export const event = {
+  name: "Devcon 8",
+  city: "Mumbai",
+  dates: "November 3 to 6",
+  start: "2026-11-03T00:00:00+05:30",
+  end: "2026-11-07T00:00:00+05:30",
+  logo: "/img/partners/devcon-8.svg",
+  href: "/contact",
+  storageKey: "avarch-banner-devcon-8",
+};
+
 export const nav = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
