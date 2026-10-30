@@ -4,7 +4,10 @@ import Logo from "./Logo.astro";
 import Icon from "./Icon.astro";
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
-const isActive = (href: string) => path === href || path.startsWith(href + "/");
+const isActive = (href: string) => {
+  const target = href.replace(/\/$/, "");
+  return path === target || path.startsWith(target + "/");
+};
 ---
 <header class="sticky top-0 z-50 border-b border-ink/10 bg-paper/85 backdrop-blur-md supports-[backdrop-filter]:bg-paper/75">
   <a
@@ -31,7 +34,7 @@ const isActive = (href: string) => path === href || path.startsWith(href + "/");
       </ul>
     </nav>
 
-    <a href="/contact" class="btn btn-primary hidden !px-4 !py-2 text-sm md:inline-flex">
+    <a href="/contact/" class="btn btn-primary hidden !px-4 !py-2 text-sm md:inline-flex">
       Work with us <Icon name="arrow-right" size={16} />
     </a>
 
@@ -63,7 +66,7 @@ const isActive = (href: string) => path === href || path.startsWith(href + "/");
         </li>
       ))}
       <li class="pt-5">
-        <a href="/contact" class="btn btn-primary w-full">Work with us <Icon name="arrow-right" size={18} /></a>
+        <a href="/contact/" class="btn btn-primary w-full">Work with us <Icon name="arrow-right" size={18} /></a>
       </li>
     </ul>
   </nav>

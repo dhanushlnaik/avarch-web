@@ -11,7 +11,7 @@ const { class: className = "" } = Astro.props;
 <section class:list={["container-page mt-28 grid gap-12 lg:grid-cols-[1fr_1.6fr]", className]}>
   <div class="lg:sticky lg:top-28 lg:self-start">
     <SectionHeader eyebrow="FAQ" title="Questions people ask us" lead="If your question isn't here, send it to us." />
-    <a href="/contact" class="btn btn-ghost mt-6">Ask a question <Icon name="arrow-right" size={18} /></a>
+    <a href="/contact/" class="btn btn-ghost mt-6">Ask a question <Icon name="arrow-right" size={18} /></a>
   </div>
   <div data-reveal-group class="divide-y divide-line border-y border-line">
     {faqs.map((f, i) => (

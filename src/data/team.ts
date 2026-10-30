@@ -40,7 +40,7 @@ export const team: TeamMember[] = [
   {
     name: "Subhrajeet Bhattacharjee",
     role: "Full Stack Intern",
-    photo: "https://github.com/SubhrajeetBhattacharjee.png?size=400",
+    photo: "/img/team/subhrajeet.jpg",
     focus: "Works across frontend, backend and product improvements.",
     github: "SubhrajeetBhattacharjee",
     linkedin: "https://www.linkedin.com/in/subhrajeet-bhattacharjee/",

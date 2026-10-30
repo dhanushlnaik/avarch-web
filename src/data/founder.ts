@@ -93,7 +93,8 @@ export const contributions = [
   },
 ];
 
-const yt = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+// Thumbnails are stored locally so a removed video can't leave a blank card.
+const yt = (id: string) => `/img/thumbs/yt-${id}.jpg`;
 
 export const talks = [
   { year: "2025", title: "From research to reality: an EIP's journey · Devconnect", href: "https://www.youtube.com/watch?v=wH76j1BDZkc", image: "/img/icons/eip_summit_cover.png" },

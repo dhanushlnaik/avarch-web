@@ -32,6 +32,8 @@ const socialLinks = (m: (typeof team)[number]) =>
           src={founder.photo}
           alt="Pooja Ranjan"
           w={460}
+          loading="eager"
+          fetchpriority="high"
           class="absolute bottom-0 left-1/2 h-[92%] w-auto max-w-none -translate-x-1/2"
         />
       </div>
@@ -97,7 +99,7 @@ const socialLinks = (m: (typeof team)[number]) =>
     <div class="container-page grid gap-12 lg:grid-cols-[1fr_1.5fr]">
       <div data-reveal>
         <p class="eyebrow">Interns</p>
-        <p class="display mt-4 text-7xl text-sun-600 sm:text-8xl"><span data-count>50+</span></p>
+        <p class="display mt-4 text-7xl text-sun-800 sm:text-8xl"><span data-count>50+</span></p>
         <h2 class="display mt-2 text-3xl sm:text-4xl">students since 2020</h2>
         <p class="mt-4 max-w-md text-ink-2">
           Paid internships in development, technical writing and video. Interns work on live products and articles

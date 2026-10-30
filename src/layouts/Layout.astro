@@ -1,21 +1,40 @@
 ---
+import { Font } from "astro:assets";
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import EventBanner from "../components/EventBanner.astro";
 import Footer from "../components/Footer.astro";
-import { event, site } from "../data/site";
+import { event, site, socials } from "../data/site";
 import { imageUrl } from "../lib/images";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  /** Extra schema.org objects for this page. */
+  schema?: Record<string, unknown>[];
 }
 
-const { title, description = site.description, image = "/img/community_banner.jpg" } = Astro.props;
+const { title, description = site.description, image = "/img/community_banner.jpg", schema = [] } = Astro.props;
 const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`;
 const canonical = new URL(Astro.url.pathname, site.url);
 const ogImage = new URL(await imageUrl(image), site.url);
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    legalName: site.legalName,
+    url: site.url,
+    logo: new URL(await imageUrl("/img/brand/bg.png", 512), site.url).href,
+    description: site.description,
+    foundingDate: String(site.founded),
+    founder: { "@type": "Person", name: "Pooja Ranjan" },
+    email: site.email,
+    sameAs: socials.map((s) => s.href),
+  },
+  ...schema,
+];
 ---
 <!doctype html>
 <html lang="en">
@@ -51,12 +70,11 @@ const ogImage = new URL(await imageUrl(image), site.url);
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ether_world" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=Geist:wght@400..600&family=Geist+Mono:wght@400..500&display=swap"
-    />
+    <Font cssVariable="--font-fraunces-display" />
+    <Font cssVariable="--font-fraunces" />
+    <Font cssVariable="--font-geist" preload />
+    <Font cssVariable="--font-geist-mono" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="min-h-dvh">

@@ -1,9 +1,32 @@
 @import "tailwindcss";
 
+/* Georgia sized to match Fraunces, so text doesn't reflow when the font swaps in.
+   Ratios measured from rendered widths; update them if the headline settings change. */
+@font-face {
+  font-family: "Fraunces Display Fallback";
+  src: local("Georgia Bold"), local("Georgia-Bold");
+  font-weight: 400 700;
+  size-adjust: 75.3%;
+}
+/* Italic arrives separately from upright; kept narrow so a headline can't wrap in between. */
+@font-face {
+  font-family: "Fraunces Display Fallback";
+  src: local("Georgia Bold Italic"), local("Georgia-BoldItalic");
+  font-weight: 400 700;
+  font-style: italic;
+  size-adjust: 66%;
+}
+@font-face {
+  font-family: "Fraunces Text Fallback";
+  src: local("Georgia");
+  font-weight: 400 700;
+  size-adjust: 103.9%;
+}
+
 @theme {
-  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: var(--font-geist);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
 
   /* Surfaces: warm cream paper */
   --color-paper: #fbf8ef;
@@ -29,6 +52,7 @@
   --color-sun-900: #4a3200;
 
   --color-moss-500: #2e8b57;
+  --color-moss-700: #1c6b40;
   --color-danger: #b42318;
 
   --radius-card: 1.25rem;
@@ -70,8 +94,10 @@
     html { scroll-behavior: auto; }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
     }
   }
 }
@@ -109,7 +135,7 @@
 
 /* Headline type. <em> inside gets a highlighter stroke. */
 @utility display {
-  font-family: var(--font-serif);
+  font-family: var(--font-fraunces-display);
   font-weight: 600;
   font-variation-settings: "opsz" 144, "SOFT" 30;
   letter-spacing: -0.025em;
@@ -235,11 +261,11 @@ header {
 }
 @utility enter {
   animation: rise 700ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  animation-delay: calc(var(--d, 0) * 90ms + 80ms);
+  animation-delay: calc(var(--d, 0) * 50ms);
 }
 @utility enter-pop {
   animation: pop 900ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  animation-delay: calc(var(--d, 0) * 90ms + 150ms);
+  animation-delay: calc(var(--d, 0) * 50ms);
 }
 
 /* Gentle idle float for small decorative pieces. */

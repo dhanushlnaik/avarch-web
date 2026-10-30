@@ -17,17 +17,17 @@ export const event = {
   start: "2026-11-03T00:00:00+05:30",
   end: "2026-11-07T00:00:00+05:30",
   logo: "/img/partners/devcon-8.svg",
-  href: "/contact",
+  href: "/contact/",
   storageKey: "avarch-banner-devcon-8",
 };
 
 export const nav = [
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about/" },
+  { label: "Projects", href: "/projects/" },
   { label: "Team", href: "/team" },
   { label: "Founder", href: "/founder" },
   { label: "Partners", href: "/partners" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact/" },
 ];
 
 export type Social = { label: string; href: string; icon: string };
@@ -305,14 +305,14 @@ export const collaborations = [
   {
     title: "Blockchain in Agriculture",
     body: "A webinar and interview with Sabarish Nair of BirthVenue on how blockchain is being adopted in India's agriculture system.",
-    image: "https://etherworld.co/content/images/size/w1000/2020/10/Agriculture-blockchain.jpg",
+    image: "/img/thumbs/ew-agriculture.jpg",
     href: "https://etherworld.co/2020/10/23/how-is-blockchain-going-to-change-agriculture-interview/",
     date: "Oct 2020",
   },
   {
     title: "EDCON 2020",
     body: "Media partner for EDCON, the Community Ethereum Development Conference, streamed online from August 9 to 11, 2020.",
-    image: "https://etherworld.co/content/images/size/w1000/2020/07/Screen-Shot-2020-07-27-at-10.11.18-AM-1.png",
+    image: "/img/thumbs/ew-edcon-2020.png",
     href: "https://etherworld.co/2020/07/27/edcon-the-community-ethereum-development-conference-to-take-place-virtually-on-august-9-11/",
     date: "Jul 2020",
   },

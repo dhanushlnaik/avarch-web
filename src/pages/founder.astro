@@ -18,6 +18,17 @@ const profiles = [
   title="Pooja Ranjan, Founder"
   description="Pooja Ranjan is the founder of Avarch and President of ECH Institute. Her path from learning Ethereum in 2016 to coordinating its network upgrades."
   image="/img/pooja-pfp.png"
+  schema={[
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: founder.name,
+      url: "https://avarch.org/founder",
+      jobTitle: "Founder",
+      worksFor: { "@type": "Organization", name: "Avarch LLC", url: "https://avarch.org" },
+      sameAs: [founder.twitter, founder.github, founder.linkedin, founder.farcaster],
+    },
+  ]}
 >
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-line">

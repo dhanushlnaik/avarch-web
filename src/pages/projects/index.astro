@@ -17,8 +17,9 @@ const archived = projects.filter((p) => p.status === "Archived");
     lead="Open-source tools, data platforms and education projects, each built to make part of Ethereum easier to understand."
   />
 
+  <h2 class="sr-only">Active projects</h2>
   <section data-reveal-group class="container-page mt-16 grid gap-5 md:grid-cols-2">
-    {live.map((p) => <ProjectCard project={p} />)}
+    {live.map((p, i) => <ProjectCard project={p} eager={i < 2} />)}
   </section>
 
   <section class="container-page mt-20">

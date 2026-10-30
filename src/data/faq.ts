@@ -20,15 +20,15 @@ export const faqs: Faq[] = [
   },
   {
     q: "Can Avarch build something for my team?",
-    a: 'We take on blockchain project development and consulting, especially work around Ethereum data, standards and education. <a href="/contact">Tell us about the project</a>.',
+    a: 'We take on blockchain project development and consulting, especially work around Ethereum data, standards and education. <a href="/contact/">Tell us about the project</a>.',
   },
   {
     q: "Do you offer internships?",
-    a: 'Yes. Since 2020 more than 50 students have done paid internships with us in development, technical writing and video. Pick "Internships" on the <a href="/contact">contact form</a> to get in touch.',
+    a: 'Yes. Since 2020 more than 50 students have done paid internships with us in development, technical writing and video. Pick "Internships" on the <a href="/contact/">contact form</a> to get in touch.',
   },
   {
     q: "Can I write for EtherWorld?",
-    a: 'Guest contributions and media partnerships are welcome. Send us your topic or draft through the <a href="/contact">contact form</a>.',
+    a: 'Guest contributions and media partnerships are welcome. Send us your topic or draft through the <a href="/contact/">contact form</a>.',
   },
   {
     q: "How is Avarch related to Ethereum Cat Herders?",
