@@ -43,7 +43,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
     <div class="container-page relative grid items-center gap-16 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-20 lg:pb-28">
       <div>
         <p class="enter inline-flex items-center gap-2 rounded-full border border-ink/15 bg-surface py-1 pl-1 pr-3 text-sm text-ink-2">
-          <span class="rounded-full border border-ink bg-sun-400 px-2 py-0.5 text-xs font-medium text-ink">New</span>
+          <span class="rounded-full border border-ink bg-peach-200 px-2 py-0.5 text-xs font-medium text-ink">New</span>
           BlobLens &amp; EthShala are live
         </p>
         <h1 style="--d: 1" class="enter display mt-7 text-[3.3rem] sm:text-7xl lg:text-[5.6rem]">
@@ -63,7 +63,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
 
       <!-- Brand panel with floating product chips -->
       <div class="relative mx-auto w-full max-w-[30rem]">
-        <div style="--d: 2" class="enter-pop relative grid aspect-square place-items-center overflow-hidden rounded-[2.5rem] border-[1.5px] border-ink bg-sun-400 shadow-[8px_8px_0_0_var(--color-ink)]">
+        <div style="--d: 2" class="enter-pop relative grid aspect-square place-items-center overflow-hidden rounded-[2.5rem] border-[1.5px] border-ink bg-lagoon-200 shadow-[8px_8px_0_0_var(--color-ink)]">
           <div class="grain absolute inset-0 opacity-60" aria-hidden="true"></div>
           <span class="absolute left-6 top-5 font-mono text-xs tracking-[0.14em]">EST. 2017</span>
           <span class="absolute bottom-5 left-6 font-mono text-xs tracking-[0.14em]">AVARCH LLC</span>
@@ -97,7 +97,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
         {stats.map((s, i) => (
           <div class:list={["p-6 sm:p-8", i < 2 && "border-b border-paper/10 md:border-b-0", i % 2 === 0 && "border-r border-paper/10", i === 1 && "md:border-r"]}>
             <dt class="text-sm text-paper/60">{s.label}</dt>
-            <dd data-count class="display mt-2 text-5xl tabular-nums text-sun-400 sm:text-6xl">{s.value}</dd>
+            <dd data-count class="display mt-2 text-5xl tabular-nums text-lagoon-300 sm:text-6xl">{s.value}</dd>
           </div>
         ))}
       </dl>
@@ -105,11 +105,11 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
   </section>
 
   <!-- Partner marquee -->
-  <section aria-label="Topics we cover" class="mt-20 -rotate-1 overflow-hidden border-y-[1.5px] border-ink bg-sun-400 py-4">
+  <section aria-label="Topics we cover" class="mt-20 -rotate-1 overflow-hidden border-y-[1.5px] border-ink bg-ink py-4 text-paper">
     <div class="flex w-max animate-marquee gap-10 whitespace-nowrap hover:[animation-play-state:paused]">
       {[...marquee, ...marquee].map((name, i) => (
         <span class="flex items-center gap-10 font-serif text-2xl font-medium" aria-hidden={i >= marquee.length ? "true" : undefined}>
-          {name}<span class="text-lg" aria-hidden="true">✦</span>
+          {name}<span class="text-lg text-lagoon-300" aria-hidden="true">✦</span>
         </span>
       ))}
     </div>
@@ -126,7 +126,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
           universities across India.
         </p>
       </div>
-      <a href="/partners" class="inline-flex items-center gap-1.5 font-medium text-sun-800 hover:text-ink">
+      <a href="/partners" class="inline-flex items-center gap-1.5 font-medium text-lagoon-800 hover:text-ink">
         All partners <Icon name="arrow-right" size={18} />
       </a>
     </div>
@@ -138,7 +138,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
             href={c.href ?? "/partners"}
             target={c.href ? "_blank" : undefined}
             rel={c.href ? "noopener" : undefined}
-            class="group relative flex h-32 items-center justify-center px-5 transition-colors hover:bg-sun-50 sm:h-36"
+            class="group relative flex h-32 items-center justify-center px-5 transition-colors hover:bg-lagoon-50 sm:h-36"
           >
             <span class="flex items-center gap-2.5 opacity-75 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0">
               <Img
@@ -155,8 +155,8 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
           </a>
         </li>
       ))}
-      <li class="bg-sun-400">
-        <a href="/partners" class="group flex h-32 flex-col items-center justify-center transition-colors hover:bg-sun-300 sm:h-36">
+      <li class="bg-lagoon-200">
+        <a href="/partners" class="group flex h-32 flex-col items-center justify-center transition-colors hover:bg-lagoon-300 sm:h-36">
           <span class="display text-4xl">+{moreUniversities}</span>
           <span class="mt-1 inline-flex items-center gap-1 text-sm font-medium">
             more universities <Icon name="arrow-right" size={14} class="transition-transform group-hover:translate-x-0.5" />
@@ -177,7 +177,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
       <div data-reveal-group class="grid gap-4 sm:grid-cols-2">
         {services.map((s) => (
           <div class="card p-6">
-            <span class="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-sun-300 text-ink">
+            <span class="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-lagoon-200 text-ink">
               <Icon name={s.icon} size={22} />
             </span>
             <h3 class="mt-5 text-lg font-semibold">{s.title}</h3>
@@ -192,7 +192,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
   <section class="container-page mt-28">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <SectionHeader eyebrow="Portfolio" title="What we've built" lead="Open-source platforms and publications used across the Ethereum ecosystem." />
-      <a href="/projects/" class="inline-flex items-center gap-1.5 font-medium text-sun-800 hover:text-ink">
+      <a href="/projects/" class="inline-flex items-center gap-1.5 font-medium text-lagoon-800 hover:text-ink">
         All projects <Icon name="arrow-right" size={18} />
       </a>
     </div>
@@ -216,7 +216,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
         {milestones.map((p) => (
           <li class="relative pl-14 md:pl-0 md:pt-16">
             <Img src={p.logo} alt="" w={40} class="absolute left-0 top-0 size-10 rounded-full border-2 border-surface bg-white object-contain p-0.5 shadow-[0_0_0_1px_var(--color-line)]" />
-            <p class="font-mono text-sm text-sun-800">{p.year}</p>
+            <p class="font-mono text-sm text-lagoon-800">{p.year}</p>
             <h3 class="mt-1 font-serif text-2xl">{p.name}</h3>
             <p class="mt-1.5 text-sm text-ink-2">{p.summary}</p>
           </li>
@@ -227,14 +227,14 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
 
   <!-- Founder -->
   <section class="container-page mt-28">
-    <div data-reveal class="grid items-center gap-10 overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-sun-300 shadow-[6px_6px_0_0_var(--color-ink)] md:grid-cols-[0.9fr_1.1fr]">
+    <div data-reveal class="grid items-center gap-10 overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-peach-200 shadow-[6px_6px_0_0_var(--color-ink)] md:grid-cols-[0.9fr_1.1fr]">
       <div class="relative h-full min-h-80 self-stretch">
         <Img src={founder.cutout} alt="Portrait of Pooja Ranjan" w={480} class="absolute bottom-0 left-1/2 h-[95%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom" />
       </div>
       <div class="px-6 pb-12 md:py-14 md:pr-14">
         <p class="eyebrow">Leadership</p>
         <blockquote class="display mt-5 text-3xl sm:text-4xl">
-          <span class="text-sun-500">“</span>{founder.quote}<span class="text-sun-500">”</span>
+          <span class="text-lagoon-600">“</span>{founder.quote}<span class="text-lagoon-600">”</span>
         </blockquote>
         <p class="mt-6 font-medium">{founder.name}</p>
         <p class="text-sm text-ink-2">{founder.role}</p>
@@ -259,7 +259,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
   <section class="container-page mt-28">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <SectionHeader eyebrow="Learn" title="Free courses on YouTube" lead="Free video series on Ethereum, Web3 and wallets." />
-      <a href={youtubePlaylists} target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-medium text-sun-800 hover:text-ink">
+      <a href={youtubePlaylists} target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-medium text-lagoon-800 hover:text-ink">
         <Icon name="youtube" size={18} /> All playlists
       </a>
     </div>
@@ -269,7 +269,7 @@ const moreUniversities = academicPartners.length - logoCloud.filter((c) => c.kin
           <a href={youtubePlaylists} target="_blank" rel="noopener" class="group block">
             <div class="relative aspect-square overflow-hidden rounded-2xl border border-line">
               <Img src={pl.image} alt="" w={256} class="size-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              <span class="absolute bottom-3 right-3 grid size-10 place-items-center rounded-full bg-white/90 text-ink shadow-sm transition-colors group-hover:bg-sun-400">
+              <span class="absolute bottom-3 right-3 grid size-10 place-items-center rounded-full bg-white/90 text-ink shadow-sm transition-colors group-hover:bg-lagoon-300">
                 <Icon name="play" size={16} />
               </span>
             </div>

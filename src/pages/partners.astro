@@ -57,7 +57,7 @@ const initials = (name: string) =>
             {p.logo ? (
               <Img src={p.logo} alt="" w={44} class="size-11 shrink-0 rounded-xl border border-line bg-white object-contain p-1" />
             ) : (
-              <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-sun-100 font-mono text-sm font-medium text-sun-800" aria-hidden="true">{initials(p.name)}</span>
+              <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-lagoon-100 font-mono text-sm font-medium text-lagoon-800" aria-hidden="true">{initials(p.name)}</span>
             )}
             <div class="min-w-0">
               <p class="font-medium leading-tight">{p.name}</p>
@@ -74,7 +74,7 @@ const initials = (name: string) =>
     <SectionHeader eyebrow="Support" title="Backed by the community" lead="Grants and community funding keep our tools open-source and free to use." />
     <div data-reveal-group class="mt-10 grid gap-5 md:grid-cols-2">
       {grants.map((g, i) => (
-        <article class:list={["card flex gap-5 p-6", i === 0 && "md:col-span-2 md:p-8 bg-gradient-to-br from-sun-100 to-surface border-sun-300"]}>
+        <article class:list={["card flex gap-5 p-6", i === 0 && "md:col-span-2 md:p-8 bg-gradient-to-br from-lagoon-100 to-surface border-lagoon-300"]}>
           <span class="grid size-14 shrink-0 place-items-center rounded-2xl border border-line bg-white p-3">
             <Img src={g.logo} alt="" w={32} class="max-h-full" />
           </span>
@@ -104,7 +104,7 @@ const initials = (name: string) =>
             <p class="font-mono text-xs text-muted">{c.date}</p>
             <h3 class="display mt-2 text-3xl">{c.title}</h3>
             <p class="mt-2 text-ink-2">{c.body}</p>
-            <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-sun-800">Read on EtherWorld <Icon name="arrow-up-right" size={16} /></span>
+            <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-lagoon-800">Read on EtherWorld <Icon name="arrow-up-right" size={16} /></span>
           </div>
         </a>
       ))}

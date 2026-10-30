@@ -26,7 +26,7 @@ const socialLinks = (m: (typeof team)[number]) =>
   <!-- Founder spotlight -->
   <section class="container-page mt-16">
     <div data-reveal class="grid overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-surface shadow-[6px_6px_0_0_var(--color-ink)] md:grid-cols-[0.85fr_1.15fr]">
-      <div class="relative min-h-80 overflow-hidden bg-sun-400">
+      <div class="relative min-h-80 overflow-hidden bg-lagoon-200">
         <div class="grain absolute inset-0 opacity-60" aria-hidden="true"></div>
         <Img
           src={founder.photo}
@@ -49,7 +49,7 @@ const socialLinks = (m: (typeof team)[number]) =>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="/founder" class="btn btn-dark">Read her story <Icon name="arrow-right" size={18} /></a>
           {socialLinks(lead).map((s) => (
-            <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-11 place-items-center rounded-full border-[1.5px] border-ink transition-colors hover:bg-sun-300">
+            <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-11 place-items-center rounded-full border-[1.5px] border-ink transition-colors hover:bg-lagoon-200">
               <Icon name={s.icon} size={17} />
             </a>
           ))}
@@ -72,7 +72,7 @@ const socialLinks = (m: (typeof team)[number]) =>
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
               class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
-            <span class="absolute left-3 top-3 rounded-full border border-ink bg-sun-400 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em]">
+            <span class="absolute left-3 top-3 rounded-full border border-ink bg-lagoon-100 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em]">
               {m.role}
             </span>
           </div>
@@ -82,7 +82,7 @@ const socialLinks = (m: (typeof team)[number]) =>
             <ul class="mt-auto flex gap-2 pt-5">
               {socialLinks(m).map((s) => (
                 <li>
-                  <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-9 place-items-center rounded-full border border-line text-ink-2 transition-colors hover:border-ink hover:bg-sun-300 hover:text-ink">
+                  <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="grid size-9 place-items-center rounded-full border border-line text-ink-2 transition-colors hover:border-ink hover:bg-lagoon-200 hover:text-ink">
                     <Icon name={s.icon} size={15} />
                   </a>
                 </li>
@@ -99,13 +99,13 @@ const socialLinks = (m: (typeof team)[number]) =>
     <div class="container-page grid gap-12 lg:grid-cols-[1fr_1.5fr]">
       <div data-reveal>
         <p class="eyebrow">Interns</p>
-        <p class="display mt-4 text-7xl text-sun-800 sm:text-8xl"><span data-count>50+</span></p>
+        <p class="display mt-4 text-7xl text-lagoon-800 sm:text-8xl"><span data-count>50+</span></p>
         <h2 class="display mt-2 text-3xl sm:text-4xl">students since 2020</h2>
         <p class="mt-4 max-w-md text-ink-2">
           Paid internships in development, technical writing and video. Interns work on live products and articles
           alongside the core team.
         </p>
-        <a href="/partners" class="mt-6 inline-flex items-center gap-1.5 font-medium text-sun-800 hover:text-ink">
+        <a href="/partners" class="mt-6 inline-flex items-center gap-1.5 font-medium text-lagoon-800 hover:text-ink">
           Our academic partners <Icon name="arrow-right" size={18} />
         </a>
       </div>
@@ -123,10 +123,10 @@ const socialLinks = (m: (typeof team)[number]) =>
   <!-- Join -->
   <section class="container-page mt-28">
     <div data-reveal class="relative overflow-hidden rounded-[2rem] border-[1.5px] border-ink bg-ink px-6 py-14 text-paper sm:px-14 sm:py-16">
-      <Img src="/img/brand/mark-sun.png" alt="" w={420} class="pointer-events-none absolute -bottom-16 -right-8 w-[18rem] rotate-[-8deg] opacity-25 sm:w-[24rem]" />
+      <Img src="/img/brand/mark-lagoon.png" alt="" w={420} class="pointer-events-none absolute -bottom-16 -right-8 w-[18rem] rotate-[-8deg] opacity-25 sm:w-[24rem]" />
       <div class="relative max-w-2xl">
-        <p class="font-mono text-xs uppercase tracking-[0.14em] text-sun-300">We're hiring</p>
-        <h2 class="display mt-3 text-4xl sm:text-6xl">Work on <em class="!bg-none text-sun-400">Ethereum</em> tooling with us</h2>
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-lagoon-300">We're hiring</p>
+        <h2 class="display mt-3 text-4xl sm:text-6xl">Work on <em class="!bg-none text-lagoon-300">Ethereum</em> tooling with us</h2>
         <p class="mt-5 max-w-xl text-lg text-paper/75">
           We look for builders who care about Ethereum governance, clear writing and shipping useful tools. Students can
           apply for internships the same way.

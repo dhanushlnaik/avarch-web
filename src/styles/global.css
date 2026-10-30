@@ -28,28 +28,31 @@
   --font-serif: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
 
-  /* Surfaces: warm cream paper */
-  --color-paper: #fbf8ef;
-  --color-paper-2: #f3eedf;
+  /* Surfaces: cool, faintly green paper */
+  --color-paper: #f6f8f5;
+  --color-paper-2: #e8f0ec;
   --color-surface: #ffffff;
-  --color-line: #e8e1cc;
-  --color-line-strong: #d3c9ad;
+  --color-line: #dbe6e1;
+  --color-line-strong: #bccdc6;
 
-  /* Ink: matches the logo */
-  --color-ink: #121110;
-  --color-ink-2: #3b3833;
-  --color-muted: #6f6a5e;
+  /* Ink: black with a teal cast, so dark sections feel part of the palette */
+  --color-ink: #0f2324;
+  --color-ink-2: #31474a;
+  --color-muted: #566b6c;
 
-  /* Brand: sunflower. Use 300 to 500 as fills; 800 for text on light surfaces. */
-  --color-sun-50: #fffbea;
-  --color-sun-100: #fff4c4;
-  --color-sun-200: #ffea8f;
-  --color-sun-300: #ffdf5c;
-  --color-sun-400: #ffd12e;
-  --color-sun-500: #f4b400;
-  --color-sun-600: #d39200;
-  --color-sun-800: #7a5200;
-  --color-sun-900: #4a3200;
+  /* Brand: lagoon. 100 to 300 as fills; 600 for large accents; 800 for text on light surfaces. */
+  --color-lagoon-50: #edf9f5;
+  --color-lagoon-100: #d8f3ec;
+  --color-lagoon-200: #b5e8dc;
+  --color-lagoon-300: #8bdccb;
+  --color-lagoon-400: #5ccbb7;
+  --color-lagoon-500: #2fa998;
+  --color-lagoon-600: #147f72;
+  --color-lagoon-800: #0c5650;
+  --color-lagoon-900: #083b37;
+
+  /* Accent: use sparingly, for one highlight per view at most. */
+  --color-peach-200: #ffdccd;
 
   --color-moss-500: #2e8b57;
   --color-moss-700: #1c6b40;
@@ -79,7 +82,7 @@
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    @apply bg-sun-300 text-ink;
+    @apply bg-lagoon-200 text-ink;
   }
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-ink;
@@ -112,7 +115,7 @@
   }
 }
 
-/* Small mono label with a yellow square marker. */
+/* Small mono label with a teal square marker. */
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
@@ -128,7 +131,7 @@
     width: 0.55rem;
     height: 0.55rem;
     border-radius: 2px;
-    background: var(--color-sun-400);
+    background: var(--color-lagoon-400);
     box-shadow: 0 0 0 1px var(--color-ink);
   }
 }
@@ -143,7 +146,7 @@
   & em {
     font-style: italic;
     font-weight: 500;
-    background: linear-gradient(transparent 58%, var(--color-sun-300) 58%, var(--color-sun-300) 92%, transparent 92%);
+    background: linear-gradient(transparent 58%, var(--color-lagoon-200) 58%, var(--color-lagoon-200) 92%, transparent 92%);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     padding-inline: 0.06em;
@@ -185,7 +188,7 @@
 }
 
 @utility btn-primary {
-  background: var(--color-sun-400);
+  background: var(--color-lagoon-300);
   color: var(--color-ink);
   box-shadow: var(--shadow-hard-sm);
   &:hover {
@@ -206,12 +209,12 @@
   background: var(--color-surface);
   color: var(--color-ink);
   &:hover {
-    background: var(--color-sun-100);
+    background: var(--color-lagoon-100);
   }
 }
 
 @utility grain {
-  background-image: radial-gradient(circle at 1px 1px, rgb(18 17 16 / 0.08) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgb(15 35 36 / 0.08) 1px, transparent 0);
   background-size: 22px 22px;
 }
 
@@ -298,7 +301,7 @@ header {
 
 /* Header picks up a shadow once the page has scrolled. */
 header[data-scrolled] {
-  box-shadow: 0 8px 24px -18px rgb(18 17 16 / 0.35);
+  box-shadow: 0 8px 24px -18px rgb(15 35 36 / 0.35);
 }
 
 /* Footer masthead: letters rise out of a clipped line, then lift on hover. */

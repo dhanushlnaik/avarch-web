@@ -20,12 +20,12 @@ export function resolveImage(src: string): ImageMetadata | string {
 export async function imageUrl(src: string, width = 1200): Promise<string> {
   const resolved = resolveImage(src);
   if (typeof resolved === "string") return resolved;
-  // JPEG has no alpha: flatten transparent cutouts onto the brand yellow instead of black.
+  // JPEG has no alpha: flatten transparent cutouts onto the brand teal instead of black.
   const img = await getImage({
     src: resolved,
     width: Math.min(width, resolved.width),
     format: "jpg",
-    background: "#ffd12e",
+    background: "#b5e8dc",
   });
   return img.src;
 }

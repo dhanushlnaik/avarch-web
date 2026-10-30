@@ -18,12 +18,12 @@ const { class: className = "" } = Astro.props;
       <details class="faq group" open={i === 0}>
         <summary class="flex cursor-pointer list-none items-start justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
           <h3 class="font-serif text-xl font-semibold leading-snug sm:text-2xl">{f.q}</h3>
-          <span class="mt-1 grid size-8 shrink-0 place-items-center rounded-full border-[1.5px] border-ink transition-[transform,background-color] duration-300 group-open:rotate-45 group-open:bg-sun-400">
+          <span class="mt-1 grid size-8 shrink-0 place-items-center rounded-full border-[1.5px] border-ink transition-[transform,background-color] duration-300 group-open:rotate-45 group-open:bg-lagoon-200">
             <Icon name="plus" size={16} />
           </span>
         </summary>
         <p
-          class="max-w-2xl pb-7 pr-12 text-ink-2 [&_a]:font-medium [&_a]:text-ink [&_a]:underline [&_a]:decoration-sun-400 [&_a]:decoration-2 [&_a]:underline-offset-4 hover:[&_a]:decoration-ink"
+          class="max-w-2xl pb-7 pr-12 text-ink-2 [&_a]:font-medium [&_a]:text-ink [&_a]:underline [&_a]:decoration-lagoon-400 [&_a]:decoration-2 [&_a]:underline-offset-4 hover:[&_a]:decoration-ink"
           set:html={f.a}
         />
       </details>

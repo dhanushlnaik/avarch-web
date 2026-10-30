@@ -33,18 +33,18 @@ const profiles = [
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-line">
     <div class="grain pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute -right-32 top-10 size-[36rem] rounded-full bg-sun-200/60 blur-3xl" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -right-32 top-10 size-[36rem] rounded-full bg-lagoon-200/60 blur-3xl" aria-hidden="true"></div>
     <div class="container-page relative grid items-end gap-6 pt-16 md:grid-cols-[1.2fr_1fr] md:pt-20">
       <div class="pb-16 md:pb-24">
         <p class="eyebrow enter">Meet the founder</p>
         <h1 style="--d: 1" class="enter display mt-4 text-6xl sm:text-8xl">Pooja <em>Ranjan</em></h1>
         <p style="--d: 2" class="enter mt-4 text-lg text-ink-2">{founder.role}</p>
-        <blockquote style="--d: 3" class="enter mt-10 max-w-xl border-l-2 border-sun-400 pl-6 font-serif text-2xl leading-snug sm:text-3xl">
+        <blockquote style="--d: 3" class="enter mt-10 max-w-xl border-l-2 border-lagoon-400 pl-6 font-serif text-2xl leading-snug sm:text-3xl">
           {founder.quote}
         </blockquote>
         <div style="--d: 4" class="enter mt-10 flex flex-wrap gap-3">
           {profiles.map((p) => (
-            <a href={p.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm font-medium transition-colors hover:border-ink hover:bg-sun-100">
+            <a href={p.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm font-medium transition-colors hover:border-ink hover:bg-lagoon-100">
               <Icon name={p.icon} size={15} /> {p.label}
             </a>
           ))}
@@ -74,8 +74,8 @@ const profiles = [
     <ol data-reveal-group class="relative border-l border-line pl-8">
       {journey.map((j) => (
         <li class="relative pb-12 last:pb-0">
-          <span class="absolute -left-[2.45rem] top-1 size-4 rounded-full border-[1.5px] border-ink bg-sun-400"></span>
-          <p class="font-mono text-sm text-sun-800">{j.year}</p>
+          <span class="absolute -left-[2.45rem] top-1 size-4 rounded-full border-[1.5px] border-ink bg-lagoon-200"></span>
+          <p class="font-mono text-sm text-lagoon-800">{j.year}</p>
           <h3 class="display mt-1 text-3xl">{j.title}</h3>
           <p class="mt-2 text-ink-2">{j.body}</p>
         </li>
@@ -127,7 +127,7 @@ const profiles = [
             <p class="eyebrow mt-6 !text-[0.68rem]">{c.kicker}</p>
             <h3 class="display mt-1 text-3xl">{c.title}</h3>
             <p class="mt-3 text-[0.95rem] text-ink-2">{c.body}</p>
-            <span class="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-sun-800">
+            <span class="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-lagoon-800">
               {c.cta} <Icon name="arrow-up-right" size={16} />
             </span>
           </a>
@@ -157,7 +157,7 @@ const profiles = [
               <Img src={t.image} alt="" w={400} class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
               <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-xs">{t.year}</span>
             </div>
-            <h3 class="mt-3 font-semibold group-hover:text-sun-800">{t.title}</h3>
+            <h3 class="mt-3 font-semibold group-hover:text-lagoon-800">{t.title}</h3>
           </a>
         </li>
       ))}
@@ -174,10 +174,10 @@ const profiles = [
             <span class="hidden font-mono text-sm text-muted sm:block">0{i + 1}</span>
             <Img src={c.image} alt="" w={144} class="aspect-video w-24 rounded-lg border border-line object-cover sm:w-36" />
             <div class="min-w-0">
-              <h3 class="font-serif text-xl leading-tight sm:text-2xl group-hover:text-sun-800">{c.title}</h3>
+              <h3 class="font-serif text-xl leading-tight sm:text-2xl group-hover:text-lagoon-800">{c.title}</h3>
               <p class="mt-1 text-sm text-muted">{c.host} · {c.length}</p>
             </div>
-            <Icon name="arrow-up-right" size={20} class="text-muted transition-colors group-hover:text-sun-800" />
+            <Icon name="arrow-up-right" size={20} class="text-muted transition-colors group-hover:text-lagoon-800" />
           </a>
         </li>
       ))}
@@ -202,11 +202,11 @@ const profiles = [
           <a href={e.href} target="_blank" rel="noopener" class="card lift group block overflow-hidden">
             <div class="relative aspect-video overflow-hidden border-b border-line bg-paper-2">
               <Img src={e.image} alt="" class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" w={320} />
-              <span class="absolute left-3 top-3 rounded-full border border-ink bg-sun-400 px-2.5 py-1 font-mono text-xs">#{e.n}</span>
+              <span class="absolute left-3 top-3 rounded-full border border-ink bg-lagoon-100 px-2.5 py-1 font-mono text-xs">#{e.n}</span>
             </div>
             <div class="p-5">
-              <p class="font-mono text-xs uppercase tracking-[0.1em] text-sun-800">{e.eip}</p>
-              <h3 class="mt-1 font-semibold leading-snug group-hover:underline group-hover:decoration-sun-400 group-hover:decoration-2 group-hover:underline-offset-4">{e.topic}</h3>
+              <p class="font-mono text-xs uppercase tracking-[0.1em] text-lagoon-800">{e.eip}</p>
+              <h3 class="mt-1 font-semibold leading-snug group-hover:underline group-hover:decoration-lagoon-400 group-hover:decoration-2 group-hover:underline-offset-4">{e.topic}</h3>
               <p class="mt-1 text-sm text-muted">with {e.guest}</p>
             </div>
           </a>
@@ -220,7 +220,7 @@ const profiles = [
     <SectionHeader eyebrow="The archive" title="Press, writing & appearances" lead="Press coverage, articles, talks and mentions, grouped by type." />
     <div data-reveal-group class="mt-12 grid gap-5 md:grid-cols-2">
       {archive.map((group) => (
-        <details class="card group overflow-hidden open:shadow-[0_18px_40px_-28px_rgb(22_23_29/0.4)]">
+        <details class="card group overflow-hidden open:shadow-[0_18px_40px_-28px_rgb(15_35_36/0.4)]">
           <summary class="flex cursor-pointer list-none items-center gap-4 p-4 [&::-webkit-details-marker]:hidden">
             <Img src={group.image} alt="" w={112} class="aspect-video w-28 shrink-0 rounded-xl object-cover" />
             <div class="min-w-0 flex-1">
@@ -235,7 +235,7 @@ const profiles = [
             {group.items.map((item) => (
               <li>
                 <a href={item.url} target="_blank" rel="noopener" class="flex items-start gap-3 rounded-lg px-2 py-2.5 text-[0.95rem] text-ink-2 hover:bg-paper hover:text-ink">
-                  <Icon name={item.video ? "play" : "link"} size={14} class="mt-1 shrink-0 text-sun-800" />
+                  <Icon name={item.video ? "play" : "link"} size={14} class="mt-1 shrink-0 text-lagoon-800" />
                   <span>{item.title}{item.source && <span class="text-muted"> · {item.source}</span>}</span>
                 </a>
               </li>

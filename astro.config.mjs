@@ -80,5 +80,5 @@ export default defineConfig({
   ],
 
   // The .html entries are redirects, not pages.
-  integrations: [sitemap({ filter: (page) => !page.endsWith('.html/') && !page.endsWith('.html') })],
+  integrations: [sitemap({ filter: (page) => !page.endsWith('.html/') && !page.endsWith('.html') && !page.includes('/colours') })],
 });

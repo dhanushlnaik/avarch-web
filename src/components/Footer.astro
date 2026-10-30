@@ -14,7 +14,7 @@ const live = projects.filter((p) => p.status !== "Archived");
       <p class="mt-5 max-w-sm text-paper/70">{site.tagline}</p>
       <a
         href={`mailto:${site.email}`}
-        class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300"
+        class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-lagoon-300 underline decoration-lagoon-300/40 underline-offset-4 hover:decoration-lagoon-300"
       >
         <Icon name="mail" size={16} />
         {site.email}
@@ -24,8 +24,8 @@ const live = projects.filter((p) => p.status !== "Archived");
     <div class="md:col-span-2">
       <h2 class="font-mono text-xs uppercase tracking-[0.12em] text-paper/50">Company</h2>
       <ul class="mt-4 space-y-2.5 text-sm">
-        <li><a class="text-paper/80 hover:text-sun-300" href="/">Home</a></li>
-        {nav.map((n) => <li><a class="text-paper/80 hover:text-sun-300" href={n.href}>{n.label}</a></li>)}
+        <li><a class="text-paper/80 hover:text-lagoon-300" href="/">Home</a></li>
+        {nav.map((n) => <li><a class="text-paper/80 hover:text-lagoon-300" href={n.href}>{n.label}</a></li>)}
       </ul>
     </div>
 
@@ -33,7 +33,7 @@ const live = projects.filter((p) => p.status !== "Archived");
       <h2 class="font-mono text-xs uppercase tracking-[0.12em] text-paper/50">Projects</h2>
       <ul class="mt-4 space-y-2.5 text-sm">
         {live.map((p) => (
-          <li><a class="text-paper/80 hover:text-sun-300" href={p.href} target="_blank" rel="noopener">{p.name}</a></li>
+          <li><a class="text-paper/80 hover:text-lagoon-300" href={p.href} target="_blank" rel="noopener">{p.name}</a></li>
         ))}
       </ul>
     </div>
@@ -48,7 +48,7 @@ const live = projects.filter((p) => p.status !== "Archived");
               target="_blank"
               rel="noopener"
               aria-label={s.label}
-              class="grid size-10 place-items-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-sun-400 hover:bg-sun-400 hover:text-ink"
+              class="grid size-10 place-items-center rounded-full border border-paper/20 text-paper/80 transition-colors hover:border-lagoon-300 hover:bg-lagoon-300 hover:text-ink"
             >
               <Icon name={s.icon} size={17} />
             </a>
@@ -67,9 +67,9 @@ const live = projects.filter((p) => p.status !== "Archived");
     </div>
     <p
       data-reveal-group
-      class="wordmark mt-3 select-none overflow-y-clip whitespace-nowrap pb-[0.04em] pt-[0.12em] font-serif text-[min(calc((100vw_-_2.5rem)/3.02),25rem)] font-semibold leading-[0.82] tracking-[-0.045em] text-sun-400 md:text-[min(calc((100vw_-_4rem)/2.92),25rem)]"
+      class="wordmark mt-3 select-none overflow-y-clip whitespace-nowrap pb-[0.04em] pt-[0.12em] font-serif text-[min(calc((100vw_-_2.5rem)/3.02),25rem)] font-semibold leading-[0.82] tracking-[-0.045em] text-lagoon-300 md:text-[min(calc((100vw_-_4rem)/2.92),25rem)]"
     >
-      <span class="wordmark-letter mr-[0.01em]"><Img src="/img/brand/mark-sun.png" alt="" w={320} class="inline-block h-[0.74em] w-auto align-baseline" /></span>
+      <span class="wordmark-letter mr-[0.01em]"><Img src="/img/brand/mark-lagoon.png" alt="" w={320} class="inline-block h-[0.74em] w-auto align-baseline" /></span>
       {"varch".split("").map((ch) => <span class="wordmark-letter">{ch}</span>)}
     </p>
   </div>
